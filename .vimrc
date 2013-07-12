@@ -12,6 +12,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-cucumber'
 Bundle 'majutsushi/tagbar'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'scrooloose/nerdtree'
 
 "add line numbers
 set nu
