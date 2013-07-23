@@ -14,6 +14,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'scrooloose/nerdtree'
+Bundle 'othree/html5.vim'
 Bundle 'shougo/unite'
 
 
@@ -23,6 +24,12 @@ set nu
 "remap leader to comma
 let mapleader=","
 let g:mapleader=","
+
+"tell default html.vim to indent ALL the elements
+"https://github.com/vim-scripts/indenthtml.vim
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
+let g:html_indent_inctags = "html,body,head,tbody"
 
 "utf-8 encoding
 "set enc=utf-8
