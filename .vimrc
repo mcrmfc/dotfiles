@@ -93,6 +93,14 @@ let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 "TagBar shortcut
 nmap <F8> :TagbarToggle<CR>
 
+"Trailing space highlight
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => spell checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
