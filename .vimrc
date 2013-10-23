@@ -14,8 +14,13 @@ Bundle 'majutsushi/tagbar'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'othree/html5.vim'
-Bundle 'shougo/unite'
+Bundle 'bronson/vim-trailing-whitespace'
+Bundle 'freitass/todo.txt-vim'
+Bundle 'bling/vim-airline'
+Bundle 'tpope/vim-fugitive'
+"Bundle 'shougo/unite'
 
 
 "add line numbers
@@ -24,6 +29,11 @@ set nu
 "remap leader to comma
 let mapleader=","
 let g:mapleader=","
+
+let g:airline_powerline_fonts = 1
+
+"256 colors
+set t_Co=256
 
 "tell default html.vim to indent ALL the elements
 "https://github.com/vim-scripts/indenthtml.vim
@@ -37,6 +47,9 @@ let g:html_indent_inctags = "html,body,head,tbody"
 "standard maximise hack
 "set lines=999
 "set columns=999
+
+"always show the status bar
+set laststatus=2
 
 "set unix line endings
 set fileformats=unix
@@ -80,8 +93,6 @@ set backspace=indent,eol,start
 syntax on
 filetype off
 filetype plugin on
-"make spv behave like php 
-au BufNewFile,BufRead *.spv set filetype=php
 "Highlight search terms...
 set hlsearch
 set incsearch " ...dynamically as they are typed.
@@ -94,12 +105,13 @@ let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 nmap <F8> :TagbarToggle<CR>
 
 "Trailing space highlight
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+"highlight ExtraWhitespace ctermbg=red guibg=red
+"match ExtraWhitespace /\s\+$/
+"autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+"autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+"autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+"autocmd BufWinLeave * call clearmatches()
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => spell checking
@@ -113,14 +125,12 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
-"au VimEnter *  NERDTree /Users/robbim02/workspace
-"au BufEnter * NERDTreeMirror
 "garuntees that the NERDTrees for all tabs will be one and the same
 map <F2> :NERDTreeToggle \| :silent NERDTreeMirror<CR>
 
 set nohidden
 
-"remap bnext to make it easier to cycle through buffers, also show list of available buffers after! 
+"remap bnext to make it easier to cycle through buffers, also show list of available buffers after!
 :nnoremap <C-Tab> :bnext<CR>:redraw<CR>:ls<CR>
 "shortcut for navigating to numbered buffer
 :nnoremap <F1> :buffers<CR>:buffer<Space>
@@ -153,6 +163,11 @@ function! CleanClose(tosave)
     exe "bd".todelbufNr
     "call Buftabs_show()
 endfunction
+
+function! RemoveDosLE()
+   :%s/\r//g
+endfunction
+nnoremap<Leader>le <Esc>:call RemoveDosLE()
 
 function! TidyXml()
     set ft=xml

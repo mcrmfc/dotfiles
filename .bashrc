@@ -15,4 +15,4 @@ export GREP_OPTIONS="--exclude=\*.svn\*"
 set -o vi
 alias tmux="TERM=screen-256color-bce tmux"
 export PATH=/usr/local/bin/ctags:/Applications/MacVim-snapshot-64:/Applications/MAMP/Library/bin:/Users/matthewrobbins/dev/utils/browsermob-proxy-2.0-beta-7/bin:~/utils:$PATH
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+alias gh="open \`git remote -v | grep git@github.com | grep fetch | head -1 | cut -f2 | cut -d' ' -f1 | sed -e's/:/\//' -e 's/git@/http:\/\//'\`"

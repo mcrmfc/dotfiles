@@ -1,13 +1,13 @@
 "remove toolbar
 set guioptions-=T
 
-"set graphical ViM Font (this is a Mac font!)
-set gfn=Consolas\ Bold:h14
-
-"requires ir_black theme in ~/.vim/colors
+"requires theme in ~/.vim/colors
 "colorscheme ir_black
 colorscheme molokai 
-set anti enc=utf-8 gfn=Source\ Code\ Pro:h16,Menlo:h14,Monaco:h14
+
+set anti enc=utf-8
+"set graphical ViM Font (this is a Powerline Patched font!)
+set guifont=Source\ Code\ Pro\ for\ Powerline:h14
 
 "mac vim maximise 
 ":set fullscreen
