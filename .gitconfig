@@ -17,3 +17,4 @@
     s = status
 [core]
 	filemode = false
+	autocrlf = input

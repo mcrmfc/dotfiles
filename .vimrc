@@ -20,7 +20,9 @@ Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'freitass/todo.txt-vim'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
-"Bundle 'shougo/unite'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'rodjek/vim-puppet'
 
 
 "add line numbers
@@ -118,6 +120,9 @@ nmap <F8> :TagbarToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
+
+"Pressing ,p will toggle and untoggle ctrlp
+map <leader>p :CtrlP<cr>
 
 ""Shortcuts using <leader>
 map <leader>sn ]s

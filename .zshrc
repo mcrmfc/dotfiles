@@ -59,5 +59,5 @@ export GREP_OPTIONS="--exclude=\*.svn\*"
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 alias tmux="TERM=screen-256color-bce tmux"
-export PATH=/usr/local/bin/ctags:/Applications/MacVim-snapshot-64:/Applications/MAMP/Library/bin:/Users/matthewrobbins/dev/utils/browsermob-proxy-2.0-beta-7/bin:~/utils:$PATH
+export PATH=/usr/local/bin/ctags:/Applications/MacVim-snapshot-67:/Applications/MAMP/Library/bin:/Users/matthewrobbins/dev/utils/browsermob-proxy-2.0-beta-7/bin:~/utils:~/workspace/utils/lcov-to-xml/lcov_cobertura:$PATH
 alias gh="open \`git remote -v | grep git@github.com | grep fetch | head -1 | cut -f2 | cut -d' ' -f1 | sed -e's/:/\//' -e 's/git@/http:\/\//'\`"

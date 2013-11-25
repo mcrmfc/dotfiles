@@ -7,7 +7,7 @@ colorscheme molokai
 
 set anti enc=utf-8
 "set graphical ViM Font (this is a Powerline Patched font!)
-set guifont=Source\ Code\ Pro\ for\ Powerline:h14
+set guifont=Source\ Code\ Pro\ for\ Powerline:h13
 
 "mac vim maximise 
 ":set fullscreen
