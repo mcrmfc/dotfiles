@@ -18,3 +18,5 @@
 [core]
 	filemode = false
 	autocrlf = input
+[url "https://github.com/"]
+	insteadOf = git://github.com/

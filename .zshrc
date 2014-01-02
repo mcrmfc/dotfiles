@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="gentoo"
+ZSH_THEME="robbyrussell"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -56,8 +56,17 @@ alias t="/usr/local/Cellar/todo-txt/2.9/bin/todo.sh"
 source /usr/local/Cellar/todo-txt/2.9/etc/bash_completion.d/todo_completion complete -F _todo t
 export EDITOR=/usr/bin/vim
 export GREP_OPTIONS="--exclude=\*.svn\*"
-bindkey -v
-bindkey '^R' history-incremental-search-backward
 alias tmux="TERM=screen-256color-bce tmux"
 export PATH=/usr/local/bin/ctags:/Applications/MacVim-snapshot-67:/Applications/MAMP/Library/bin:/Users/matthewrobbins/dev/utils/browsermob-proxy-2.0-beta-7/bin:~/utils:~/workspace/utils/lcov-to-xml/lcov_cobertura:$PATH
 alias gh="open \`git remote -v | grep git@github.com | grep fetch | head -1 | cut -f2 | cut -d' ' -f1 | sed -e's/:/\//' -e 's/git@/http:\/\//'\`"
+
+#for vi mode
+#http://dougblack.io/words/zsh-vi-mode.html
+bindkey -v
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
+export KEYTIMEOUT=1
