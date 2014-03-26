@@ -1,3 +1,4 @@
+export PATH=/usr/local/bin:/Applications/MacVim-snapshot-67:/Applications/MAMP/Library/bin:/Users/matthewrobbins/dev/utils/browsermob-proxy-2.0-beta-7/bin:~/utils:~/workspace/utils/lcov-to-xml/lcov_cobertura:$PATH
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -5,7 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="crunch"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -40,7 +41,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git history-substring-search autojump zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -53,11 +54,11 @@ alias mybundle='bundle install --binstubs --path vendor/bundle'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias killchrome="ps aux | grep -i chrome | cut -d ' ' -f2 | xargs kill -9"
 alias t="/usr/local/Cellar/todo-txt/2.9/bin/todo.sh"
+alias initstubs='bin/rake stubs:serve_stub_config --trace'
 source /usr/local/Cellar/todo-txt/2.9/etc/bash_completion.d/todo_completion complete -F _todo t
 export EDITOR=/usr/bin/vim
 export GREP_OPTIONS="--exclude=\*.svn\*"
 alias tmux="TERM=screen-256color-bce tmux"
-export PATH=/usr/local/bin/ctags:/Applications/MacVim-snapshot-67:/Applications/MAMP/Library/bin:/Users/matthewrobbins/dev/utils/browsermob-proxy-2.0-beta-7/bin:~/utils:~/workspace/utils/lcov-to-xml/lcov_cobertura:$PATH
 alias gh="open \`git remote -v | grep git@github.com | grep fetch | head -1 | cut -f2 | cut -d' ' -f1 | sed -e's/:/\//' -e 's/git@/http:\/\//'\`"
 
 #for vi mode
@@ -70,3 +71,5 @@ bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 export KEYTIMEOUT=1
+export CONFIG=vagrant
+export VAGRANT_DIRECTORY=/Users/matthewrobbins/workspace/dev_environment

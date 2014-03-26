@@ -1,5 +1,5 @@
 [user]
-    name = mcrmfc
+    name = Matthew Robbins
     email = matthew.robbins@itv.com
 [github]
     user = mcrmfc
@@ -8,7 +8,7 @@
 [merge]
     tool = mvim
 [mergetool "mvim"]
-    cmd = /Applications/MacVim-snapshot-64/mvim -d -g $LOCAL $MERGED $REMOTE
+    cmd = /Applications/MacVim-snapshot-67/mvim -d -g $LOCAL $MERGED $REMOTE
     keepbackup = false
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit

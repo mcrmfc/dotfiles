@@ -149,6 +149,7 @@ vnoremap <C-H> :<C-U>Hexmode<CR>
 "buffer without removing NERDTree
 noremap fc <Esc>:call CleanClose(1)
 noremap fq <Esc>:call CleanClose(0)
+noremap fx <Esc>:call CloseAllButNerdTree()
 
 function! CleanClose(tosave)
     if (a:tosave == 1)
@@ -167,6 +168,38 @@ function! CleanClose(tosave)
     endif
     exe "bd".todelbufNr
     "call Buftabs_show()
+endfunction
+
+function! CloseAllButNerdTree()
+    let buffer = 'NERD_tree_1'
+
+	let last_buffer = bufnr('$')
+
+	let delete_count = 0
+	let n = 1
+	while n <= last_buffer
+		if n != buffer && buflisted(n)
+			if getbufvar(n, '&modified')
+				echohl ErrorMsg
+				echomsg 'No write since last change for buffer'
+							\ n '(add ! to override)'
+				echohl None
+			else
+				silent exe 'bdel' . ' ' . n
+				if ! buflisted(n)
+					let delete_count = delete_count+1
+				endif
+			endif
+		endif
+		let n = n+1
+	endwhile
+
+	if delete_count == 1
+		echomsg delete_count "buffer deleted"
+	elseif delete_count > 1
+		echomsg delete_count "buffers deleted"
+	endif
+
 endfunction
 
 function! RemoveDosLE()
