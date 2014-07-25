@@ -1,4 +1,3 @@
-export PATH=/usr/local/bin:/Applications/MacVim-snapshot-67:/Applications/MAMP/Library/bin:/Users/matthewrobbins/dev/utils/browsermob-proxy-2.0-beta-7/bin:~/utils:~/workspace/utils/lcov-to-xml/lcov_cobertura:$PATH
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -50,16 +49,18 @@ eval "$(rbenv init -)"
 alias g='grep --color=always -n --exclude=\*.svn\*'
 alias gs='screen'
 alias mdiff='mvim -d'
-alias mybundle='bundle install --binstubs --path vendor/bundle'
+alias bndl='bundle install --binstubs --path vendor/bundle'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias killchrome="ps aux | grep -i chrome | cut -d ' ' -f2 | xargs kill -9"
 alias t="/usr/local/Cellar/todo-txt/2.9/bin/todo.sh"
-alias initstubs='bin/rake stubs:serve_stub_config --trace'
 source /usr/local/Cellar/todo-txt/2.9/etc/bash_completion.d/todo_completion complete -F _todo t
 export EDITOR=/usr/bin/vim
 export GREP_OPTIONS="--exclude=\*.svn\*"
 alias tmux="TERM=screen-256color-bce tmux"
 alias gh="open \`git remote -v | grep git@github.com | grep fetch | head -1 | cut -f2 | cut -d' ' -f1 | sed -e's/:/\//' -e 's/git@/http:\/\//'\`"
+alias gits="git s"
+alias update-chromedriver=~/workspace/dotfiles/update_chromedriver.sh
+alias edna-copy="rm -rf ~/workspace/edna-acceptance/public && mkdir ~/workspace/edna-acceptance/public && cp -R ~/workspace/edna/public ~/workspace/edna-acceptance/public/web"
 
 #for vi mode
 #http://dougblack.io/words/zsh-vi-mode.html
@@ -71,5 +72,7 @@ bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 export KEYTIMEOUT=1
+
+#work related env variables
 export CONFIG=vagrant
 export VAGRANT_DIRECTORY=/Users/matthewrobbins/workspace/dev_environment
