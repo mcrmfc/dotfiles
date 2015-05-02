@@ -60,7 +60,7 @@ alias tmux="TERM=screen-256color-bce tmux"
 alias gh="open \`git remote -v | grep git@github.com | grep fetch | head -1 | cut -f2 | cut -d' ' -f1 | sed -e's/:/\//' -e 's/git@/http:\/\//'\`"
 alias gits="git s"
 alias update-chromedriver=~/workspace/dotfiles/update_chromedriver.sh
-alias edna-copy="rm -rf ~/workspace/edna-acceptance/public && mkdir ~/workspace/edna-acceptance/public && cp -R ~/workspace/edna/public ~/workspace/edna-acceptance/public/web"
+alias tagfile='rm -rf tags && ctags -R --exclude=vendor --languages=Ruby,JavaScript .'
 
 #for vi mode
 #http://dougblack.io/words/zsh-vi-mode.html
