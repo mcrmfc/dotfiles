@@ -30,8 +30,12 @@ Bundle "mcrmfc/AutoTag"
 Bundle "vim-scripts/Decho"
 Bundle "honza/vim-snippets"
 Bundle "ngmy/vim-rubocop"
+Bundle 'rking/ag.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'elixir-lang/vim-elixir'
 
-
+"tread md as markdown
+au BufRead,BufNewFile *.md set filetype=markdown
 
 "add line numbers
 set nu
@@ -166,6 +170,9 @@ noremap fc <Esc>:call CleanClose(1)
 noremap fq <Esc>:call CleanClose(0)
 noremap fx <Esc>:call CloseAllButNerdTree()
 
+" clear highlighted search results using escape
+nnoremap <esc> :noh<return><esc>
+
 function! CleanClose(tosave)
     if (a:tosave == 1)
         w!
@@ -229,4 +236,3 @@ function! TidyXml()
 endfunction
 
 noremap tx <Esc>:call TidyXml()
-Bundle 'rking/ag.vim'
