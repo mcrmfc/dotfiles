@@ -73,6 +73,19 @@ bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 export KEYTIMEOUT=1
 
-#work related env variables
+
+# itv specific
 export CONFIG=vagrant
 export VAGRANT_DIRECTORY=/Users/matthewrobbins/workspace/dev_environment
+
+
+function fnord-request() {
+    curl -vvv "$1" -H "Accept: application/vnd.itv.ctv.production.v1+hal+json; charset=UTF-8" | jsonpp
+}
+
+function fnord-html-request() {
+    curl -vvv "$1" -H "Accept: text/html; charset=UTF-8"
+}
+
+alias edna-copy="rm -rf ~/workspace/edna-acceptance/public && mkdir -p ~/workspace/edna-acceptance/public/web && cp -R ~/workspace/edna/public ~/workspace/edna-acceptance/public/web/samsung"
+alias killcitrix="ps x | grep -i citrix | grep -v grep | awk '{ print $1 }' | xargs kill -9"

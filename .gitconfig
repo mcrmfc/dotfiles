@@ -19,5 +19,6 @@
 [core]
 	filemode = false
 	autocrlf = input
+	excludesfile = /Users/matthewrobbins/.gitignore_global
 [url "https://github.com/"]
 	insteadOf = git://github.com/
