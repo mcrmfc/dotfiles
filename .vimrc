@@ -33,6 +33,7 @@ Bundle "ngmy/vim-rubocop"
 Bundle 'rking/ag.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'elixir-lang/vim-elixir'
+Bundle 'fatih/vim-go'
 
 "tread md as markdown
 au BufRead,BufNewFile *.md set filetype=markdown
