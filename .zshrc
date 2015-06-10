@@ -52,11 +52,8 @@ alias mdiff='mvim -d'
 alias bndl='bundle install --binstubs --path vendor/bundle'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias killchrome="ps aux | grep -i chrome | cut -d ' ' -f2 | xargs kill -9"
-alias t="/usr/local/Cellar/todo-txt/2.9/bin/todo.sh"
-source /usr/local/Cellar/todo-txt/2.9/etc/bash_completion.d/todo_completion complete -F _todo t
+# source /usr/local/Cellar/todo-txt/2.9/etc/bash_completion.d/todo_completion complete -F _todo t
 export EDITOR=/usr/bin/vim
-export GREP_OPTIONS="--exclude=\*.svn\*"
-alias tmux="TERM=screen-256color-bce tmux"
 alias gh="open \`git remote -v | grep git@github.com | grep fetch | head -1 | cut -f2 | cut -d' ' -f1 | sed -e's/:/\//' -e 's/git@/http:\/\//'\`"
 alias gits="git s"
 alias update-chromedriver=~/workspace/dotfiles/update_chromedriver.sh
@@ -76,3 +73,4 @@ export KEYTIMEOUT=1
 #work related env variables
 export CONFIG=vagrant
 export VAGRANT_DIRECTORY=/Users/matthewrobbins/workspace/dev_environment
+export VAGRANT_DEFAULT_PROVIDER=virtualbox

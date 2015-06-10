@@ -1,9 +1,6 @@
-"don't behave like vi!
-set nocompatible
-
-"Vundler Config
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+"Vundle Config
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 "let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 "bundles
@@ -11,7 +8,6 @@ Bundle "pangloss/vim-javascript"
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-cucumber'
 Bundle 'majutsushi/tagbar'
-Bundle 'airblade/vim-gitgutter'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
@@ -33,6 +29,8 @@ Bundle "ngmy/vim-rubocop"
 Bundle 'rking/ag.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'elixir-lang/vim-elixir'
+Bundle 'elzr/vim-json'
+call vundle#end()
 
 "tread md as markdown
 au BufRead,BufNewFile *.md set filetype=markdown
@@ -130,6 +128,9 @@ nmap <F8> :TagbarToggle<CR>
 "autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 "autocmd BufWinLeave * call clearmatches()
 
+"visual clue for line length
+set colorcolumn=80
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => spell checking
@@ -170,8 +171,8 @@ noremap fc <Esc>:call CleanClose(1)
 noremap fq <Esc>:call CleanClose(0)
 noremap fx <Esc>:call CloseAllButNerdTree()
 
-" clear highlighted search results using escape
-nnoremap <esc> :noh<return><esc>
+" clear highlighted search results using leader c
+map <leader>c :noh<cr>
 
 function! CleanClose(tosave)
     if (a:tosave == 1)
