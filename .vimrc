@@ -30,6 +30,7 @@ Bundle 'rking/ag.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'elzr/vim-json'
+Bundle 'fatih/vim-go'
 call vundle#end()
 
 "tread md as markdown

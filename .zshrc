@@ -58,6 +58,7 @@ alias gh="open \`git remote -v | grep git@github.com | grep fetch | head -1 | cu
 alias gits="git s"
 alias update-chromedriver=~/workspace/dotfiles/update_chromedriver.sh
 alias tagfile='rm -rf tags && ctags -R --exclude=vendor --languages=Ruby,JavaScript .'
+alias apple_keybaord=~/workspace/dotfiles/apple_keyboard.sh
 
 #for vi mode
 #http://dougblack.io/words/zsh-vi-mode.html
@@ -70,7 +71,4 @@ bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 export KEYTIMEOUT=1
 
-#work related env variables
-export CONFIG=vagrant
-export VAGRANT_DIRECTORY=/Users/matthewrobbins/workspace/dev_environment
-export VAGRANT_DEFAULT_PROVIDER=virtualbox
+export GOPATH=~/go
