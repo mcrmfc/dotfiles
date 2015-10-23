@@ -59,6 +59,9 @@ alias gits="git s"
 alias update-chromedriver=~/workspace/dotfiles/update_chromedriver.sh
 alias tagfile='rm -rf tags && ctags -R --exclude=vendor --languages=Ruby,JavaScript .'
 alias apple_keybaord=~/workspace/dotfiles/apple_keyboard.sh
+alias laptop_keybaord=~/workspace/dotfiles/laptop_keyboard.sh
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 
 #for vi mode
 #http://dougblack.io/words/zsh-vi-mode.html

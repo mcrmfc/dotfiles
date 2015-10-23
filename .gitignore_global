@@ -1,6 +1,8 @@
 vendor/bundle
 .bundle
+bin
 tags
 .vagrant
 .*DS_Store
 .*swp
+*swp

@@ -31,6 +31,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'elzr/vim-json'
 Bundle 'fatih/vim-go'
+Bundle 'markcornick/vim-terraform'
 call vundle#end()
 
 "tread md as markdown
