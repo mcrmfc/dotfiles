@@ -40,12 +40,12 @@ ZSH_THEME="crunch"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git history-substring-search autojump zsh-syntax-highlighting)
+plugins=(git history-substring-search autojump zsh-syntax-highlighting rbenv)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 alias g='grep --color=always -n --exclude=\*.svn\*'
 alias gs='screen'
 alias mdiff='mvim -d'
@@ -53,7 +53,7 @@ alias bndl='bundle install --binstubs --path vendor/bundle'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias killchrome="ps aux | grep -i chrome | cut -d ' ' -f2 | xargs kill -9"
 alias t="/usr/local/Cellar/todo-txt/2.9/bin/todo.sh"
-source /usr/local/Cellar/todo-txt/2.9/etc/bash_completion.d/todo_completion complete -F _todo t
+#source /usr/local/Cellar/todo-txt/2.9/etc/bash_completion.d/todo_completion complete -F _todo t
 export EDITOR=/usr/bin/vim
 export GREP_OPTIONS="--exclude=\*.svn\*"
 alias tmux="TERM=screen-256color-bce tmux"
@@ -61,6 +61,11 @@ alias gh="open \`git remote -v | grep git@github.com | grep fetch | head -1 | cu
 alias gits="git s"
 alias update-chromedriver=~/workspace/dotfiles/update_chromedriver.sh
 alias tagfile='rm -rf tags && ctags -R --exclude=vendor --languages=Ruby,JavaScript .'
+alias hgrep='history | ag -i $1'
+alias dockershell="bash --login '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'"
+alias dockerpurge="~/workspace/dotfiles/dockerpurge.sh"
+alias dockerstopremove="~/workspace/dotfiles/dockerstopremove.sh"
+alias vlc='/Applications/VLC.app/Contents/MacOS/VLC' 
 
 #for vi mode
 #http://dougblack.io/words/zsh-vi-mode.html

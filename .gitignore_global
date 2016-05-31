@@ -1,0 +1,8 @@
+*.swp
+tags
+.DS_Store
+.idea
+*.iml
+out
+*.jar
+
