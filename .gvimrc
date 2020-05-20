@@ -16,7 +16,7 @@ set guifont=Source\ Code\ Pro\ for\ Powerline:h13
 set colorcolumn=80
 
 "start NERDTree on VIM open, and set starting directory
-au VimEnter *  NERDTree /Users/matthewrobbins/workspace
+au VimEnter *  NERDTree /Users/ost/workspace
 au BufEnter * NERDTreeMirror
 "garuntees that the NERDTrees for all tabs will be one and the same
 map <F2> :NERDTreeToggle \| :silent NERDTreeMirror<CR>

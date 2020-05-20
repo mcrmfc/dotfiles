@@ -1,6 +1,6 @@
 [user]
-    name = Matthew Robbins
-    email = matthew.robbins@itv.com
+	name = Matt R
+	email = 
 [github]
     user = mcrmfc
 [diff]
@@ -19,6 +19,6 @@
 [core]
 	filemode = false
 	autocrlf = input
-	excludesfile = /Users/matthewrobbins/.gitignore_global
+	excludesfile = /Users/ost/.gitignore_global
 [url "https://github.com/"]
 	insteadOf = git://github.com/

@@ -40,27 +40,29 @@ ZSH_THEME="crunch"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git history-substring-search autojump zsh-syntax-highlighting)
+plugins=(rbenv git history-substring-search autojump zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+export PATH="$HOME/.rbenv/bin:$HOME/bin:$HOME/bin/terraform:/Applications/Arduino.app/Contents/MacOS/:$HOME/sonar-scanner-3.3.0.1492-macosx/bin:$HOME/bin/groovy-2.5.9/bin:$PATH"
 eval "$(rbenv init -)"
+alias mi='mvn install'
 alias g='grep --color=always -n --exclude=\*.svn\*'
 alias gs='screen'
 alias mdiff='mvim -d'
 alias bndl='bundle install --binstubs --path vendor/bundle'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias killchrome="ps aux | grep -i chrome | cut -d ' ' -f2 | xargs kill -9"
-alias t="/usr/local/Cellar/todo-txt/2.9/bin/todo.sh"
-source /usr/local/Cellar/todo-txt/2.9/etc/bash_completion.d/todo_completion complete -F _todo t
 export EDITOR=/usr/bin/vim
-export GREP_OPTIONS="--exclude=\*.svn\*"
 alias tmux="TERM=screen-256color-bce tmux"
 alias gh="open \`git remote -v | grep git@github.com | grep fetch | head -1 | cut -f2 | cut -d' ' -f1 | sed -e's/:/\//' -e 's/git@/http:\/\//'\`"
 alias gits="git s"
 alias update-chromedriver=~/workspace/dotfiles/update_chromedriver.sh
 alias tagfile='rm -rf tags && ctags -R --exclude=vendor --languages=Ruby,JavaScript .'
+alias hgrep='history | ag -i $1'
+alias copydeps='mvn org.apache.maven.plugins:maven-dependency-plugin:2.10:copy-dependencies -Dmdep.useRepositoryLayout=true -DoutputDirectory=output -Dmdep.addParentPoms=true -Dmdep.copyPom=true'
+alias openports='sudo lsof -PiTCP -sTCP:LISTEN'
 
 #for vi mode
 #http://dougblack.io/words/zsh-vi-mode.html
@@ -72,20 +74,17 @@ bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 export KEYTIMEOUT=1
+export TF_VAR_access_key="AKIAI3XMH7SEPEJTCY2Q"
+export TF_VAR_secret_key="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"
 
-
-# itv specific
-export CONFIG=vagrant
-export VAGRANT_DIRECTORY=/Users/matthewrobbins/workspace/dev_environment
-
-
-function fnord-request() {
-    curl -vvv "$1" -H "Accept: application/vnd.itv.ctv.production.v1+hal+json; charset=UTF-8" | jsonpp
+docker_rm_containers_for_image() {
+    docker ps -a | awk '{ print $1,$2 }' | grep $1 | awk '{print $1 }' | xargs docker rm
 }
 
-function fnord-html-request() {
-    curl -vvv "$1" -H "Accept: text/html; charset=UTF-8"
-}
 
-alias edna-copy="rm -rf ~/workspace/edna-acceptance/public && mkdir -p ~/workspace/edna-acceptance/public/web && cp -R ~/workspace/edna/public ~/workspace/edna-acceptance/public/web/samsung"
-alias killcitrix="ps x | grep -i citrix | grep -v grep | awk '{ print $1 }' | xargs kill -9"
+[ -s "/Users/ost/.jabba/jabba.sh" ] && source "/Users/ost/.jabba/jabba.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"

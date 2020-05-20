@@ -7,7 +7,7 @@
 ########## Variables
 dir=~/workspace/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc bash_profile gvimrc tmux-conf dir_colors gitconfig git-completion.bash git-prompt.sh vimrc vim"    # list of files/folders to symlink in homedir
+files="zshrc bashrc bash_profile gvimrc tmux-conf dir_colors gitconfig git-completion.bash git-prompt.sh vimrc vim"    # list of files/folders to symlink in homedir
 ##########
 
 # create dotfiles_old in homedir

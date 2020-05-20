@@ -2,38 +2,44 @@
 set nocompatible
 
 "Vundler Config
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 "let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 "bundles
-Bundle "pangloss/vim-javascript"
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-cucumber'
-Bundle 'majutsushi/tagbar'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'othree/html5.vim'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'freitass/todo.txt-vim'
-Bundle 'bling/vim-airline'
-Bundle 'tpope/vim-fugitive'
-Bundle 'kien/ctrlp.vim'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'rodjek/vim-puppet'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "mcrmfc/AutoTag"
-Bundle "vim-scripts/Decho"
-Bundle "honza/vim-snippets"
-Bundle "ngmy/vim-rubocop"
-Bundle 'rking/ag.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'fatih/vim-go'
+Plugin 'pangloss/vim-javascript'
+Plugin 'MaxMEllon/vim-jsx-pretty'
+Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-cucumber'
+Plugin 'majutsushi/tagbar'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'othree/html5.vim'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'freitass/todo.txt-vim'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'kien/ctrlp.vim'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'rodjek/vim-puppet'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'mcrmfc/AutoTag'
+Plugin 'vim-scripts/Decho'
+Plugin 'honza/vim-snippets'
+Plugin 'ngmy/vim-rubocop'
+Plugin 'rking/ag.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'fatih/vim-go'
+Plugin 'stevearc/vim-arduino'
+Plugin 'prettier/vim-prettier'
+Plugin 'stephpy/vim-yaml'
+call vundle#end()
 
 "tread md as markdown
 au BufRead,BufNewFile *.md set filetype=markdown
@@ -78,8 +84,8 @@ set autoindent
 "set smartindent "don't think this should be used if using plugin indent
 filetype plugin indent on
 set expandtab
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 
 "indent based on file type, if recognised
 "matt - i think this means a file will get reformatted on openening in a
@@ -172,7 +178,7 @@ noremap fq <Esc>:call CleanClose(0)
 noremap fx <Esc>:call CloseAllButNerdTree()
 
 " clear highlighted search results using escape
-nnoremap <esc> :noh<return><esc>
+"nnoremap <esc> :noh<return><esc>
 
 function! CleanClose(tosave)
     if (a:tosave == 1)

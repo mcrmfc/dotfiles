@@ -16,3 +16,9 @@
 #alias tmux="TERM=screen-256color-bce tmux"
 #export PATH=/usr/local/bin/ctags:/Applications/MacVim-snapshot-64:/Applications/MAMP/Library/bin:/Users/matthewrobbins/dev/utils/browsermob-proxy-2.0-beta-7/bin:~/utils:$PATH
 #alias gh="open \`git remote -v | grep git@github.com | grep fetch | head -1 | cut -f2 | cut -d' ' -f1 | sed -e's/:/\//' -e 's/git@/http:\/\//'\`"
+
+[ -s "/Users/ost/.jabba/jabba.sh" ] && source "/Users/ost/.jabba/jabba.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
